@@ -39,7 +39,7 @@ struct ASTnode *binexpr(void) {
   int nodetype;
 
   left = primary();
-
+  
   if(Token.token == T_EOF) {
     return left;
   }

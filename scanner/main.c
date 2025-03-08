@@ -44,22 +44,15 @@ void main(int argc, char *argv[]) {
     exit(1);
   }
 
-  // switch (argv[2]) {
-  //   case ("scanner"):
-  //     scanfile();
-  //     break;
-  //   case ("parser"):
-  //     struct ASTnode *node;
-  //     scan(&Token);
-  //     node = binexpr();
-  //     printf("%d\n", interpretAST(node));
-  //     break;
-  // }
-
-  struct ASTnode *node;
-  scan(&Token);
-  node = binexpr();
-  printf("%d\n", interpretAST(node));
+  char* mode = argv[2];
+  if(strcmp(mode, "scanner") == 0) {
+    scanfile();
+  } else if (strcmp(mode, "parser") == 0) {
+    struct ASTnode *node;
+    scan(&Token);
+    node = binexpr();
+    printf("%d\n", interpretAST(node));
+  }
 
   exit(0);
 }

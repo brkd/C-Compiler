@@ -13,14 +13,19 @@ int interpretAST(struct ASTnode *node) {
 
     switch (node->op) {
         case A_ADD:
+            printf("%d + %d\n", leftval, rightval);
             return (leftval + rightval);
         case A_SUBTRACT:
+            printf("%d - %d\n", leftval, rightval);
             return (leftval - rightval);
         case A_MULTIPLY:
+            printf("%d * %d\n", leftval, rightval);
             return (leftval * rightval);
         case A_DIVIDE:
+            printf("%d / %d\n", leftval, rightval);
             return (leftval / rightval);
         case A_INTLIT:
+            printf("int %d\n", node->intvalue);
             return (node->intvalue);
         default:
         fprintf(stderr, "Unknown AST operator %d\n", node->op);
