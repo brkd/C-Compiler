@@ -1,4 +1,4 @@
-#include "definitions.h"
+#include "defs.h"
 #define extern_
 #include "data.h"
 #undef extern_
@@ -34,7 +34,7 @@ static void scanfile() {
 }
 
 void main(int argc, char *argv[]) {
-  if (argc != 2)
+  if (argc != 3)
     usage(argv[0]);
 
   init();
@@ -44,6 +44,22 @@ void main(int argc, char *argv[]) {
     exit(1);
   }
 
-  scanfile();
+  // switch (argv[2]) {
+  //   case ("scanner"):
+  //     scanfile();
+  //     break;
+  //   case ("parser"):
+  //     struct ASTnode *node;
+  //     scan(&Token);
+  //     node = binexpr();
+  //     printf("%d\n", interpretAST(node));
+  //     break;
+  // }
+
+  struct ASTnode *node;
+  scan(&Token);
+  node = binexpr();
+  printf("%d\n", interpretAST(node));
+
   exit(0);
 }
