@@ -50,7 +50,7 @@ void main(int argc, char *argv[]) {
   } else if (strcmp(mode, "parser") == 0) {
     struct ASTnode *node;
     scan(&Token);
-    node = binexpr();
+    node = additive_expr();
     printf("%d\n", interpretAST(node));
   }
 
